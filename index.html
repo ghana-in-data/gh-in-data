@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghana In Data</title>
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #FFFFFF;
+            color: #000000;
+            padding: 20px;
+            border-bottom: 2px solid #EF3340; /* Red accent */
+        }
+        header h1 {
+            margin: 0;
+            color: #009739; /* Green for headings */
+        }
+        footer p {
+            margin: 0;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        button.primary {
+            background-color: #EF3340; /* Red */
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button.primary:hover {
+            background-color: #D72828; /* Darker red on hover */
+        }
+        button.secondary {
+            background-color: #009739; /* Green */
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button.secondary:hover {
+            background-color: #007A2E; /* Darker green on hover */
+        }
+        a {
+            color: #EF3340; /* Red for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            color: #009739; /* Green for subheadings */
+        }
+        .highlight {
+            background-color: #FCD116; /* Yellow highlight */
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .divider {
+            border-bottom: 2px solid #009739; /* Green divider */
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ghana In Data</h1>
+    </header>
+
+    <div class="content">
+        <p>The Ghana in Data project is an open source initiative to creatively present data about Ghana with a focus on Sustainable Development Goals.</p>
+        <p class="highlight">We are a community of data enthusiasts, developers, designers, researchers, journalists, policymakers, and citizens who are passionate about data and its potential to drive positive change in Ghana.</p>
+        <p>The project is inspired by the <a href="https://www.ourworldindata.org">Our World In Data</a> project and the <a href="https://www.data.gov.gh">Ghana Open Data Initiative</a>.</p>
+
+        <h2>Contributing</h2>
+        <p>The project is currently in its early stages and we are looking for contributors to help us build the platform. If you are interested in contributing, please read our <a href="CONTRIBUTING.md">Contributing Guidelines</a>.</p>
+
+        <div class="divider"></div>
+
+        <h2>Current Repo Structure</h2>
+        <p><img src="https://owid.github.io/badges/workflows/Continuous%20Integration/badge.svg" alt="Actions Status">
+        <img src="https://owid.github.io/badges/coverage.svg" alt="Test coverage">
+        <img src="https://raw.githubusercontent.com/storybookjs/brand/master/badge/badge-storybook.svg" alt="Storybook"></p>
+
+        <p>The repo we use at <a href="https://ourworldindata.org">Ghana In Data</a> to create and publish embeddable, interactive visualizations like this one:</p>
+        <p><img src="https://ourworldindata.org/grapher/exports/life-expectancy.svg" alt="A Grapher chart showing world-wide life expectancy at birth."></p>
+
+        <div class="divider"></div>
+
+        <h2>Disclaimer</h2>
+        <p>This repo is currently in its early stages and it's not well-designed for reuse as a visualization library, nor for reproducing the full production environment. We are working to make our tools less tightly coupled with our database structure. You are very welcome to make <a href="CONTRIBUTING.md">contributions</a> to help us make this project better!</p>
+
+        <div class="divider"></div>
+
+        <h2>Getting Started</h2>
+        <p>To quickly get a version of the site running for developing Grapher features, we recommend following the <a href="docs/docker-compose-mysql.md">local development setup</a> guide.</p>
+        <p><a href="docs/setup-options-overview.md">Additional setup options</a> are also available for other use cases.</p>
+
+        <div class="divider"></div>
+
+        <h2>Overview</h2>
+        <p>Multiple projects are maintained in this repo:</p>
+        <ul>
+            <li><strong><a href="packages/%40ourworldindata/grapher/">Grapher</a>:</strong> A client-side interactive data visualization library used by almost every chart on Our World in Data.</li>
+            <li><strong><a href="explorer/">Explorer</a>:</strong> A Grapher-based tool that creates more complex data visualization user interfaces.</li>
+            <li><strong>Grapher Admin:</strong> A client-side project that provides a user interface for configuring graphers, explorers, and managing and uploading data.</li>
+            <li><strong><a href="baker/">Baker</a>:</strong> A PM2 project that builds a static copy of the Our World in Data website by merging content authored in Gdocs with the grapher charts.</li>
+            <li><strong><a href="site/">Site</a>:</strong> The React code for rendering our content in pages, used by the Grapher Admin and Baker.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Tooling</h2>
+        <p>Much of our code is based around reactive programming using React and Mobx.</p>
+        <p>All code is written in TypeScript. If you want to enable pre-commit hooks, run `yarn husky`.</p>
+        <p>Visual Studio Code is recommended for autocompletion and other awesome editor analysis features enabled by static typing.</p>
+
+        <div class="divider"></div>
+
+        <h2>Why are we choosing to build on the original OWID project?</h2>
+        <p>When the idea came to build a data visualization tool for the Ghana in Data project, we had to decide whether to build a new tool from scratch or to build on an existing tool. We decided to build on the original Our World in Data project for the following reasons:</p>
+        <blockquote>
+            <p>The OWID-Grapher solves this problem by using a single visualization codebase and a single database into which all of our data is placed. Once the data has been imported, creating a visualization is reduced to choosing the visualization type and selecting the relevant variables in the Grapher user interface. The result can then be customized and published to the web with the press of a button.</p>
+            <p>Building on OWID's work has very important advantages:</p>
+            <ul>
+                <li><strong>Integration with our global development database:</strong> The database of global development metrics can be integrated into the visualization tool so that when we add and update empirical data, all visualizations are updated.</li>
+                <li><strong>Flexibility:</strong> Automation allows us to change our entire system at once, making it possible to scale our publication and sustainably improve our work without starting from scratch each round.</li>
+                <li><strong>Risk mitigation:</strong> We want our visualizations to remain useful and available years from now. An external web service may be shut down or change for reasons we cannot control, a risk we've learned from experience.</li>
+                <li><strong>Keeping everything up-to-date:</strong> With our global development database integrated into the Grapher, we can easily update all visualizations whenever new data becomes available.</li>
+            </ul>
+        </blockquote>
+    </div>
+
+    <footer>
+        <p>Cross-browser testing provided by <a href="https://www.browserstack.com"><img src="https://3fxtqy18kygf3on3bu39kh93-wpengine.netdna-ssl.com/wp-content/themes/browserstack/img/bs-logo.svg" alt="BrowserStack" /></a></p>
+        <p>Client-side bug tracking provided by <a href="http://www.bugsnag.com/"><img width="110" src="https://images.typeform.com/images/QKuaAssrFCq7/image/default" alt="Bugsnag" /></a></p>
+    </footer>
+
+</body>
+</html>
