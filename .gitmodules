@@ -1,0 +1,3 @@
+[submodule "ghid-grapher"]
+	path = ghid-grapher
+	url = https://github.com/Simontagbor/ghid-grapher
