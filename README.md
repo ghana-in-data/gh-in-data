@@ -1,6 +1,6 @@
 # Ghana In Data
-
-The Ghana in Data project is an open source project to creatively present data about Ghana with a focus on Sustainable Development Goals. We are a community of data enthusiasts, developers, designers, researchers, journalists, policy makers, and citizens who are passionate about data and its potential to drive positive change in Ghana.
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+The Ghana in Data project is an open source project to promote informed solutions for the future by inspiring meaningful action on Ghana's biggest challenges using research, data, and storytelling. We use the Sustainable Development Goals (SDGs) as a framework to present data about Ghana in a compelling way. We work as a community of data enthusiasts, developers, designers, researchers, journalists, policy makers, and citizens who are passionate about data and its potential to drive positive change in Ghana.
 
 The project is inspired by the [Our World In Data](www.ourworldindata.org) open source project and the [Ghana Open Data Initiative](www.data.gov.gh).
 
